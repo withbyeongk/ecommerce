@@ -44,3 +44,30 @@ sequenceDiagram
 ```
 
 ## 결제 API
+
+![img_1.png](img_1.png)
+
+```mermaid
+sequenceDiagram
+    actor Client
+    participant eCommerce
+    participant Order
+    participant Payment
+
+    Client->>eCommerce: [POST] /api/payment : 입력(orderId)
+    
+    eCommerce->>Order: 주문 정보 조회
+    activate Order
+    break 
+        Order-->>Client: [Error] Not Found Order.
+    end 
+    Order->>eCommerce: 주문 정보 반환
+    deactivate Order
+    
+    eCommerce->>Payment: 결제 정보 저장
+    activate Payment
+    Payment->>eCommerce: 결제 결과 반환
+    deactivate Payment
+
+    eCommerce->>Client: 응답(paymentId)
+```
