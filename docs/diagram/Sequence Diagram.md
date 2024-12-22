@@ -4,6 +4,8 @@
 
 ![img.png](img.png)
 
+- 머메이드 스크립트
+- 
 ```mermaid
 sequenceDiagram
     actor Client
@@ -46,6 +48,8 @@ sequenceDiagram
 ## 결제 API
 
 ![img_1.png](img_1.png)
+
+- 머메이드 스크립트
 
 ```mermaid
 sequenceDiagram
